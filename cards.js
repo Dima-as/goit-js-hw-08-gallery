@@ -1,4 +1,3 @@
-
 import galleryItems from "./app.js"
 
 const refs={
