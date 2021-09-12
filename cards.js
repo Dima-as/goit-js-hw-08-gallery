@@ -37,6 +37,7 @@ overlay.addEventListener('click',onOverlayClose);
 
 function onOpenModalBtn (event){
   window.addEventListener('keydown',onEscKeydown)
+  
    const isGalleryImage = event.target.classList.contains('gallery__image')
    if (!isGalleryImage) {
     return;
@@ -49,10 +50,9 @@ function onOpenModalBtn (event){
 }
 
 function closeModalBtn (event){
-  window.removeEventListener('keydown',onEscKeydown)
+	window.removeEventListener('keydown',onEscKeydown)
   modal.classList.remove("is-open");
-  images.src = "";
-    images.alt = "";
+  images.removeAttribute('src')
 }
 
 function onOverlayClose (event){
@@ -60,6 +60,7 @@ function onOverlayClose (event){
     return
   }
   closeModalBtn ()
+
 }
 
 function onEscKeydown(event){
